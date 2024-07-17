@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Explorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Vaisseaux\\Explorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Vaisseaux\\Cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\StockManager.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\StockManager.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\SpaceShip.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\SpaceShip.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Services\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Ailes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Pieces\\Ailes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Speeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Vaisseaux\\Speeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Propulseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Pieces\\Propulseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Moteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Pieces\\Moteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Coque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Models\\Pieces\\Coque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandProcessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Services\\CommandProcessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipBuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Services\\ShipBuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Services\\ShipFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpaceShip\\Services\\CommandValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Inventory.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Inventory.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Inventory.cs",
+              "RelativeToolTip": "SpaceShip\\Inventory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T09:16:09.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StockManager.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\StockManager.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\StockManager.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\StockManager.cs",
+              "RelativeToolTip": "SpaceShip\\StockManager.cs",
+              "ViewState": "AQIAAOYAAAAAAAAAAAAkwP4AAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T09:14:34.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Program.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Program.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Program.cs",
+              "RelativeToolTip": "SpaceShip\\Program.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAkwGsAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:49:58.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Ailes.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Ailes.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Pieces\\Ailes.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Ailes.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Pieces\\Ailes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:18:03.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Propulseur.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Propulseur.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Pieces\\Propulseur.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Propulseur.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Pieces\\Propulseur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:17:45.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cargo.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Cargo.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Vaisseaux\\Cargo.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Cargo.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Vaisseaux\\Cargo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:19:25.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Explorer.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Explorer.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Vaisseaux\\Explorer.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Explorer.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Vaisseaux\\Explorer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:38:03.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Speeder.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Speeder.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Vaisseaux\\Speeder.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Speeder.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Vaisseaux\\Speeder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:38:02.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpaceShip.csproj",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\SpaceShip.csproj",
+              "RelativeDocumentMoniker": "SpaceShip\\SpaceShip.csproj",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\SpaceShip.csproj",
+              "RelativeToolTip": "SpaceShip\\SpaceShip.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-14T14:37:52.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Moteur.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Moteur.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Pieces\\Moteur.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Moteur.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Pieces\\Moteur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:17:56.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Coque.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Coque.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Pieces\\Coque.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Pieces\\Coque.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Pieces\\Coque.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:17:23.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Vaisseau.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs",
+              "RelativeToolTip": "SpaceShip\\Models\\Vaisseaux\\Vaisseau.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:18:52.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\Inventory.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Services\\Inventory.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\Inventory.cs",
+              "RelativeToolTip": "SpaceShip\\Services\\Inventory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:36:48.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CommandProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandProcessor.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Services\\CommandProcessor.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandProcessor.cs",
+              "RelativeToolTip": "SpaceShip\\Services\\CommandProcessor.cs",
+              "ViewState": "AQIAALoAAAAAAAAAAAAAAMEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:30:34.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ShipBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipBuilder.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Services\\ShipBuilder.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipBuilder.cs",
+              "RelativeToolTip": "SpaceShip\\Services\\ShipBuilder.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:20:51.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ShipFactory.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipFactory.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Services\\ShipFactory.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\ShipFactory.cs",
+              "RelativeToolTip": "SpaceShip\\Services\\ShipFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:21:07.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandValidator.cs",
+              "RelativeDocumentMoniker": "SpaceShip\\Services\\CommandValidator.cs",
+              "ToolTip": "C:\\Users\\DOGBEVI\\Desktop\\TRAVAIL\\SpaceShip\\SpaceShip\\Services\\CommandValidator.cs",
+              "RelativeToolTip": "SpaceShip\\Services\\CommandValidator.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAkwF0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T14:31:49.637Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
