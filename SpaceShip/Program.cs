@@ -1,116 +1,62 @@
-﻿using ShipFactoryApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using ShipFactoryApp.Managers;
 
-namespace ShipFactoryApp
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        var stockManager = StockManager.Instance;
+
+        stockManager.DisplayStock();
+
+        while (true)
         {
-            StockManager stockManager = new StockManager();
+            Console.WriteLine("Entrez une commande (ou tapez 'STOCKS' pour afficher les stocks, 'NEEDED_STOCKS ARGS' pour afficher les pièces nécessaires, 'INSTRUCTIONS ARGS' pour afficher les instructions d'assemblage, 'VERIFY ARGS' pour vérifier une commande ou 'QUIT' pour quitter) :");
+            var input = Console.ReadLine();
 
-            stockManager.AddPieceToStock("Hull_HE1", 5);
-            stockManager.AddPieceToStock("Engine_EE1", 5);
-            stockManager.AddPieceToStock("Wings_WE1", 5);
-            stockManager.AddPieceToStock("Thruster_TE1", 10);
-
-            stockManager.AddPieceToStock("Hull_HS1", 5);
-            stockManager.AddPieceToStock("Engine_ES1", 5);
-            stockManager.AddPieceToStock("Wings_WS1", 5);
-            stockManager.AddPieceToStock("Thruster_TS1", 10);
-
-            stockManager.AddPieceToStock("Hull_HC1", 5);
-            stockManager.AddPieceToStock("Engine_EC1", 5);
-            stockManager.AddPieceToStock("Wings_WC1", 5);
-            stockManager.AddPieceToStock("Thruster_TC1", 5);
-
-            string input;
-            do
+            if (input.ToUpper() == "QUIT")
             {
-                Console.WriteLine("Entrez une commande (ou tapez 'STOCKS' pour afficher les stocks, 'NEEDED_STOCKS ARGS' pour afficher les pièces nécessaires, 'INSTRUCTIONS ARGS' pour afficher les instructions d'assemblage, 'VERIFY ARGS' pour vérifier une commande, 'PRODUCE ARGS' pour produire un vaisseau, ou 'QUIT' pour quitter) :");
-                input = Console.ReadLine();
-
-                if (input == "STOCKS")
-                {
-                    stockManager.DisplayStock();
-                }
-                else if (input.StartsWith("NEEDED_STOCKS "))
-                {
-                    string[] parts = input.Split(' ');
-                    if (parts.Length >= 2)
-                    {
-                        Dictionary<string, int> vaisseaux = new Dictionary<string, int>();
-                        for (int i = 1; i < parts.Length; i += 2)
-                        {
-                            string type = parts[i];
-                            int quantity = int.Parse(parts[i + 1]);
-                            if (vaisseaux.ContainsKey(type))
-                            {
-                                vaisseaux[type] += quantity;
-                            }
-                            else
-                            {
-                                vaisseaux[type] = quantity;
-                            }
-                        }
-                        stockManager.NeededStocks(vaisseaux);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Commande incorrecte. Utilisez: NEEDED_STOCKS [type quantité] ...");
-                    }
-                }
-                else if (input.StartsWith("INSTRUCTIONS "))
-                {
-                    string[] parts = input.Split(' ');
-                    if (parts.Length >= 2)
-                    {
-                        Dictionary<string, int> vaisseaux = new Dictionary<string, int>();
-                        for (int i = 1; i < parts.Length; i += 2)
-                        {
-                            string type = parts[i];
-                            int quantity = int.Parse(parts[i + 1]);
-                            if (vaisseaux.ContainsKey(type))
-                            {
-                                vaisseaux[type] += quantity;
-                            }
-                            else
-                            {
-                                vaisseaux[type] = quantity;
-                            }
-                        }
-                        stockManager.GenerateInstructions(vaisseaux);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Commande incorrecte. Utilisez: INSTRUCTIONS [type quantité] ...");
-                    }
-                }
-                else if (input.StartsWith("VERIFY "))
-                {
-                    stockManager.VerifyCommand(input);
-                }
-                else if (input.StartsWith("PRODUCE "))
-                {
-                    string[] parts = input.Split(' ');
-                    if (parts.Length == 2)
-                    {
-                        stockManager.ProduceSpaceship(parts[1]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Commande incorrecte. Utilisez: PRODUCE [type]");
-                    }
-                }
-                else if (input != "QUIT")
-                {
-                    Console.WriteLine("Commande non reconnue.");
-                }
-
-            } while (input != "QUIT");
-
-            Console.WriteLine("Programme terminé.");
+                break;
+            }
+            else if (input.ToUpper() == "STOCKS")
+            {
+                stockManager.DisplayStock();
+            }
+            else if (input.ToUpper().StartsWith("NEEDED_STOCKS"))
+            {
+                var args = input.Substring("NEEDED_STOCKS".Length).Trim();
+                var order = ParseOrder(args);
+                stockManager.NeededStocks(order);
+            }
+            else if (input.ToUpper().StartsWith("INSTRUCTIONS"))
+            {
+                var args = input.Substring("INSTRUCTIONS".Length).Trim();
+                var order = ParseOrder(args);
+                stockManager.Instructions(order);
+            }
+            else if (input.ToUpper().StartsWith("VERIFY"))
+            {
+                var args = input.Substring("VERIFY".Length).Trim();
+                var order = ParseOrder(args);
+                stockManager.Verify(order);
+            }
         }
+    }
+
+    static Dictionary<string, int> ParseOrder(string args)
+    {
+        var order = new Dictionary<string, int>();
+        var items = args.Split(',');
+
+        foreach (var item in items)
+        {
+            var parts = item.Trim().Split(' ');
+            var quantity = int.Parse(parts[0]);
+            var vaisseauType = parts[1];
+            order[vaisseauType] = quantity;
+        }
+
+        return order;
     }
 }

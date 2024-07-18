@@ -1,260 +1,273 @@
 using System;
 using System.Collections.Generic;
+using ShipFactoryApp.Models.Pieces;
+using ShipFactoryApp.Models.Vaisseaux;
 
-namespace ShipFactoryApp.Models
+namespace ShipFactoryApp.Managers
 {
-	public class StockManager
-	{
-		private Dictionary<string, int> stock = new Dictionary<string, int>();
+    public class StockManager
+    {
+        private static StockManager instance;
+        private static readonly object lockObject = new object();
 
-		public void AddPieceToStock(string pieceName, int quantity)
-		{
-			if (stock.ContainsKey(pieceName))
-			{
-				stock[pieceName] += quantity;
-			}
-			else
-			{
-				stock[pieceName] = quantity;
-			}
-		}
+        private Dictionary<string, int> stock = new Dictionary<string, int>();
 
-		public void DisplayStock()
-		{
-			Console.WriteLine("Inventaire des pièces disponibles :");
-			foreach (var item in stock)
-			{
-				Console.WriteLine($"{item.Key}: {item.Value}");
-			}
-		}
+        // Private constructor to prevent direct instantiation
+        private StockManager()
+        {
+            // Initialize with some stock
+            AddToStock("Hull_HE1", 5);
+            AddToStock("Engine_EE1", 5);
+            AddToStock("Wings_WE1", 5);
+            AddToStock("Thruster_TE1", 10);
+            AddToStock("Hull_HS1", 5);
+            AddToStock("Engine_ES1", 5);
+            AddToStock("Wings_WS1", 5);
+            AddToStock("Thruster_TS1", 10);
+            AddToStock("Hull_HC1", 5);
+            AddToStock("Engine_EC1", 5);
+            AddToStock("Wings_WC1", 5);
+            AddToStock("Thruster_TC1", 5);
+        }
 
-		public void NeededStocks(Dictionary<string, int> vaisseaux)
-		{
-			Dictionary<string, int> totalNeeded = new Dictionary<string, int>();
+        // Public static method to get the instance
+        public static StockManager Instance
+        {
+            get
+            {
+                lock (lockObject)
+                {
+                    if (instance == null)
+                    {
+                        instance = new StockManager();
+                    }
+                    return instance;
+                }
+            }
+        }
 
-			foreach (var vaisseau in vaisseaux)
-			{
-				Console.WriteLine($"{vaisseau.Value} {vaisseau.Key} :");
+        public void AddToStock(string piece, int quantity)
+        {
+            if (stock.ContainsKey(piece))
+            {
+                stock[piece] += quantity;
+            }
+            else
+            {
+                stock[piece] = quantity;
+            }
+        }
 
-				switch (vaisseau.Key.ToUpper())
-				{
-					case "EXPLORER":
-						PrintNeededPieces("Hull_HE1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Engine_EE1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Wings_WE1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Thruster_TE1", 2 * vaisseau.Value, totalNeeded);
-						break;
-					case "SPEEDER":
-						PrintNeededPieces("Hull_HS1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Engine_ES1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Wings_WS1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Thruster_TS1", 2 * vaisseau.Value, totalNeeded);
-						break;
-					case "CARGO":
-						PrintNeededPieces("Hull_HC1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Engine_EC1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Wings_WC1", 1 * vaisseau.Value, totalNeeded);
-						PrintNeededPieces("Thruster_TC1", 1 * vaisseau.Value, totalNeeded);
-						break;
-					default:
-						Console.WriteLine("Type de vaisseau inconnu.");
-						break;
-				}
-			}
+        public void DisplayStock()
+        {
+            Console.WriteLine("Inventaire des pièces disponibles :");
+            foreach (var item in stock)
+            {
+                Console.WriteLine($"{item.Key}: {item.Value}");
+            }
+        }
 
-			Console.WriteLine("\nTotal :");
-			foreach (var item in totalNeeded)
-			{
-				Console.WriteLine($"{item.Value} {item.Key}");
-			}
-		}
+        public void NeededStocks(Dictionary<string, int> order)
+        {
+            Dictionary<string, Dictionary<string, int>> needed = new Dictionary<string, Dictionary<string, int>>();
+            Dictionary<string, int> total = new Dictionary<string, int>();
 
-		private void PrintNeededPieces(string pieceName, int quantity, Dictionary<string, int> totalNeeded)
-		{
-			Console.WriteLine($"{quantity} {pieceName}");
+            foreach (var item in order)
+            {
+                string vaisseauType = item.Key;
+                int quantity = item.Value;
 
-			if (totalNeeded.ContainsKey(pieceName))
-			{
-				totalNeeded[pieceName] += quantity;
-			}
-			else
-			{
-				totalNeeded[pieceName] = quantity;
-			}
-		}
+                if (!needed.ContainsKey(vaisseauType))
+                {
+                    needed[vaisseauType] = new Dictionary<string, int>();
+                }
 
-		public void Instructions()
-		{
-			Console.WriteLine("Instructions disponibles :");
-			Console.WriteLine("STOCKS - Afficher les stocks");
-			Console.WriteLine("NEEDED_STOCKS ARGS - Afficher les pièces nécessaires pour chaque type de vaisseau");
-			Console.WriteLine("VERIFY [type] - Vérifier si un vaisseau du type spécifié peut être produit");
-			Console.WriteLine("PRODUCE [type] - Produire un vaisseau du type spécifié si le stock est suffisant");
-			Console.WriteLine("INSTRUCTIONS ARGS - Générer les instructions d'assemblage pour une commande");
-			Console.WriteLine("QUIT - Quitter le programme");
-		}
+                for (int i = 0; i < quantity; i++)
+                {
+                    var vaisseau = CreateVaisseau(vaisseauType);
+                    if (vaisseau != null)
+                    {
+                        foreach (var prop in vaisseau.GetType().GetProperties())
+                        {
+                            if (prop.PropertyType == typeof(Coque) || prop.PropertyType == typeof(Moteur) ||
+                                prop.PropertyType == typeof(Ailes))
+                            {
+                                var piece = prop.GetValue(vaisseau) as dynamic;
+                                if (!needed[vaisseauType].ContainsKey(piece.Name))
+                                {
+                                    needed[vaisseauType][piece.Name] = 0;
+                                }
+                                needed[vaisseauType][piece.Name] += piece.Quantity;
 
-		public void Verify(string type)
-		{
-			bool canProduce = false;
+                                if (!total.ContainsKey(piece.Name))
+                                {
+                                    total[piece.Name] = 0;
+                                }
+                                total[piece.Name] += piece.Quantity;
+                            }
+                            else if (prop.PropertyType == typeof(List<Propulseur>))
+                            {
+                                var propulseurs = prop.GetValue(vaisseau) as List<Propulseur>;
+                                foreach (var propulseur in propulseurs)
+                                {
+                                    if (!needed[vaisseauType].ContainsKey(propulseur.Name))
+                                    {
+                                        needed[vaisseauType][propulseur.Name] = 0;
+                                    }
+                                    needed[vaisseauType][propulseur.Name] += propulseur.Quantity;
 
-			switch (type)
-			{
-				case "EXPLORER":
-					canProduce = stock.ContainsKey("Hull_HE1") && stock["Hull_HE1"] >= 1 &&
-								 stock.ContainsKey("Engine_EE1") && stock["Engine_EE1"] >= 1 &&
-								 stock.ContainsKey("Wings_WE1") && stock["Wings_WE1"] >= 1 &&
-								 stock.ContainsKey("Thruster_TE1") && stock["Thruster_TE1"] >= 2;
-					break;
-				case "SPEEDER":
-					canProduce = stock.ContainsKey("Hull_HS1") && stock["Hull_HS1"] >= 1 &&
-								 stock.ContainsKey("Engine_ES1") && stock["Engine_ES1"] >= 1 &&
-								 stock.ContainsKey("Wings_WS1") && stock["Wings_WS1"] >= 1 &&
-								 stock.ContainsKey("Thruster_TS1") && stock["Thruster_TS1"] >= 2;
-					break;
-				case "CARGO":
-					canProduce = stock.ContainsKey("Hull_HC1") && stock["Hull_HC1"] >= 1 &&
-								 stock.ContainsKey("Engine_EC1") && stock["Engine_EC1"] >= 1 &&
-								 stock.ContainsKey("Wings_WC1") && stock["Wings_WC1"] >= 1 &&
-								 stock.ContainsKey("Thruster_TC1") && stock["Thruster_TC1"] >= 1;
-					break;
-				default:
-					Console.WriteLine("Type de vaisseau inconnu.");
-					return;
-			}
+                                    if (!total.ContainsKey(propulseur.Name))
+                                    {
+                                        total[propulseur.Name] = 0;
+                                    }
+                                    total[propulseur.Name] += propulseur.Quantity;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-			if (canProduce)
-			{
-				Console.WriteLine("AVAILABLE");
-			}
-			else
-			{
-				Console.WriteLine("UNAVAILABLE");
-			}
-		}
+            foreach (var vaisseau in needed)
+            {
+                Console.WriteLine($"{vaisseau.Key}:");
+                foreach (var piece in vaisseau.Value)
+                {
+                    Console.WriteLine($"{piece.Value} {piece.Key}");
+                }
+            }
 
-		public void ProduceSpaceship(string type)
-		{
-			if (VerifyProduction(type))
-			{
-				switch (type)
-				{
-					case "EXPLORER":
-						stock["Hull_HE1"] -= 1;
-						stock["Engine_EE1"] -= 1;
-						stock["Wings_WE1"] -= 1;
-						stock["Thruster_TE1"] -= 2;
-						break;
-					case "SPEEDER":
-						stock["Hull_HS1"] -= 1;
-						stock["Engine_ES1"] -= 1;
-						stock["Wings_WS1"] -= 1;
-						stock["Thruster_TS1"] -= 2;
-						break;
-					case "CARGO":
-						stock["Hull_HC1"] -= 1;
-						stock["Engine_EC1"] -= 1;
-						stock["Wings_WC1"] -= 1;
-						stock["Thruster_TC1"] -= 1;
-						break;
-					default:
-						Console.WriteLine("Type de vaisseau inconnu.");
-						return;
-				}
+            Console.WriteLine("Total:");
+            foreach (var piece in total)
+            {
+                Console.WriteLine($"{piece.Value} {piece.Key}");
+            }
+        }
 
-				Console.WriteLine($"Un vaisseau de type {type} a été produit.");
-			}
-			else
-			{
-				Console.WriteLine($"Un vaisseau de type {type} ne peut pas être produit en raison de pièces manquantes.");
-			}
-		}
+        public void Instructions(Dictionary<string, int> order)
+        {
+            foreach (var item in order)
+            {
+                string vaisseauType = item.Key;
+                int quantity = item.Value;
 
-		private bool VerifyProduction(string type)
-		{
-			switch (type)
-			{
-				case "EXPLORER":
-					return stock.ContainsKey("Hull_HE1") && stock["Hull_HE1"] >= 1 &&
-						   stock.ContainsKey("Engine_EE1") && stock["Engine_EE1"] >= 1 &&
-						   stock.ContainsKey("Wings_WE1") && stock["Wings_WE1"] >= 1 &&
-						   stock.ContainsKey("Thruster_TE1") && stock["Thruster_TE1"] >= 2;
-				case "SPEEDER":
-					return stock.ContainsKey("Hull_HS1") && stock["Hull_HS1"] >= 1 &&
-						   stock.ContainsKey("Engine_ES1") && stock["Engine_ES1"] >= 1 &&
-						   stock.ContainsKey("Wings_WS1") && stock["Wings_WS1"] >= 1 &&
-						   stock.ContainsKey("Thruster_TS1") && stock["Thruster_TS1"] >= 2;
-				case "CARGO":
-					return stock.ContainsKey("Hull_HC1") && stock["Hull_HC1"] >= 1 &&
-						   stock.ContainsKey("Engine_EC1") && stock["Engine_EC1"] >= 1 &&
-						   stock.ContainsKey("Wings_WC1") && stock["Wings_WC1"] >= 1 &&
-						   stock.ContainsKey("Thruster_TC1") && stock["Thruster_TC1"] >= 1;
-				default:
-					return false;
-			}
-		}
+                for (int i = 0; i < quantity; i++)
+                {
+                    Console.WriteLine($"PRODUCING {vaisseauType}");
+                    var vaisseau = CreateVaisseau(vaisseauType);
+                    if (vaisseau != null)
+                    {
+                        if (vaisseauType == "Speeder")
+                        {
+                            Console.WriteLine("GET_OUT_STOCK 1 Hull_HS1");
+                            Console.WriteLine("GET_OUT_STOCK 1 Engine_ES1");
+                            Console.WriteLine("GET_OUT_STOCK 1 Wings_WS1");
+                            Console.WriteLine("GET_OUT_STOCK 2 Thruster_TS1");
+                            Console.WriteLine("ASSEMBLE TMP1 Hull_HS1 Engine_ES1");
+                            Console.WriteLine("ASSEMBLE TMP1 Wings_WS1");
+                            Console.WriteLine("ASSEMBLE TMP3 [TMP1,Wings_WS1] Thruster_TS1");
+                            Console.WriteLine("ASSEMBLE TMP3 Thruster_TS1");
+                        }
+                        else
+                        {
+                            foreach (var prop in vaisseau.GetType().GetProperties())
+                            {
+                                if (prop.PropertyType == typeof(Coque) || prop.PropertyType == typeof(Moteur) ||
+                                    prop.PropertyType == typeof(Ailes))
+                                {
+                                    var piece = prop.GetValue(vaisseau) as dynamic;
+                                    Console.WriteLine($"GET_OUT_STOCK {piece.Quantity} {piece.Name}");
+                                }
+                                else if (prop.PropertyType == typeof(List<Propulseur>))
+                                {
+                                    var propulseurs = prop.GetValue(vaisseau) as List<Propulseur>;
+                                    foreach (var propulseur in propulseurs)
+                                    {
+                                        Console.WriteLine($"GET_OUT_STOCK {propulseur.Quantity} {propulseur.Name}");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Console.WriteLine($"FINISHED {vaisseauType}");
+                }
+            }
+        }
 
-		public void GenerateInstructions(Dictionary<string, int> vaisseaux)
-		{
-			foreach (var vaisseau in vaisseaux)
-			{
-				for (int i = 0; i < vaisseau.Value; i++)
-				{
-					Console.WriteLine($"PRODUCING {vaisseau.Key}");
+        public void Verify(Dictionary<string, int> order)
+        {
+            Dictionary<string, int> needed = new Dictionary<string, int>();
 
-					switch (vaisseau.Key.ToUpper())
-					{
-						case "EXPLORER":
-							Console.WriteLine("GET_OUT_STOCK 1 Hull_HE1");
-							Console.WriteLine("GET_OUT_STOCK 1 Engine_EE1");
-							Console.WriteLine("GET_OUT_STOCK 1 Wings_WE1");
-							Console.WriteLine("GET_OUT_STOCK 2 Thruster_TE1");
-							break;
-						case "SPEEDER":
-							Console.WriteLine("GET_OUT_STOCK 1 Hull_HS1");
-							Console.WriteLine("GET_OUT_STOCK 1 Engine_ES1");
-							Console.WriteLine("GET_OUT_STOCK 1 Wings_WS1");
-							Console.WriteLine("GET_OUT_STOCK 2 Thruster_TS1");
-							break;
-						case "CARGO":
-							Console.WriteLine("GET_OUT_STOCK 1 Hull_HC1");
-							Console.WriteLine("GET_OUT_STOCK 1 Engine_EC1");
-							Console.WriteLine("GET_OUT_STOCK 1 Wings_WC1");
-							Console.WriteLine("GET_OUT_STOCK 1 Thruster_TC1");
-							break;
-						default:
-							Console.WriteLine("Type de vaisseau inconnu.");
-							break;
-					}
+            foreach (var item in order)
+            {
+                string vaisseauType = item.Key;
+                int quantity = item.Value;
 
-					Console.WriteLine($"FINISHED {vaisseau.Key}");
-				}
-			}
-		}
+                // Check if the vaisseauType is valid
+                if (CreateVaisseau(vaisseauType) == null)
+                {
+                    Console.WriteLine($"ERROR `{vaisseauType}` is not a recognized spaceship");
+                    return;
+                }
 
-		public void VerifyCommand(string command)
-		{
-			string[] parts = command.Split(' ');
+                for (int i = 0; i < quantity; i++)
+                {
+                    var vaisseau = CreateVaisseau(vaisseauType);
+                    if (vaisseau != null)
+                    {
+                        foreach (var prop in vaisseau.GetType().GetProperties())
+                        {
+                            if (prop.PropertyType == typeof(Coque) || prop.PropertyType == typeof(Moteur) ||
+                                prop.PropertyType == typeof(Ailes))
+                            {
+                                var piece = prop.GetValue(vaisseau) as dynamic;
+                                if (!needed.ContainsKey(piece.Name))
+                                {
+                                    needed[piece.Name] = 0;
+                                }
+                                needed[piece.Name] += piece.Quantity;
+                            }
+                            else if (prop.PropertyType == typeof(List<Propulseur>))
+                            {
+                                var propulseurs = prop.GetValue(vaisseau) as List<Propulseur>;
+                                foreach (var propulseur in propulseurs)
+                                {
+                                    if (!needed.ContainsKey(propulseur.Name))
+                                    {
+                                        needed[propulseur.Name] = 0;
+                                    }
+                                    needed[propulseur.Name] += propulseur.Quantity;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-			if (parts.Length != 2)
-			{
-				Console.WriteLine("ERROR Commande incorrecte : nombre incorrect d'arguments.");
-				return;
-			}
+            foreach (var piece in needed)
+            {
+                if (!stock.ContainsKey(piece.Key) || stock[piece.Key] < piece.Value)
+                {
+                    Console.WriteLine($"UNAVAILABLE");
+                    return;
+                }
+            }
+            Console.WriteLine("AVAILABLE");
+        }
 
-			string type = parts[1].ToUpper();
-
-			switch (type)
-			{
-				case "EXPLORER":
-				case "SPEEDER":
-				case "CARGO":
-					Verify(type);
-					break;
-				default:
-					Console.WriteLine("ERROR Type de vaisseau inconnu.");
-					break;
-			}
-		}
-	}
+        private Vaisseau CreateVaisseau(string vaisseauType)
+        {
+            switch (vaisseauType)
+            {
+                case "Explorer":
+                    return new Exploreur();
+                case "Speeder":
+                    return new Speeder();
+                case "Cargo":
+                    return new Cargo();
+                default:
+                    return null;
+            }
+        }
+    }
 }
