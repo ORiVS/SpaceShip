@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using ShipFactoryApp.Models.Pieces;
-using ShipFactoryApp.Models.Vaisseaux;
-
 namespace ShipFactoryApp.Managers
 {
     public class StockManager
     {
-        private static StockManager instance;
-        private static readonly object lockObject = new object();
+        // Étape 1: Ajouter un champ privé statique pour contenir l'instance unique.
+        private static StockManager _instance;
 
-        private Dictionary<string, int> stock = new Dictionary<string, int>();
-
-        // Private constructor to prevent direct instantiation
+        // Étape 2: Rendre le constructeur privé pour empêcher l'instanciation directe.
         private StockManager()
         {
             // Initialize with some stock
@@ -30,21 +23,20 @@ namespace ShipFactoryApp.Managers
             AddToStock("Thruster_TC1", 5);
         }
 
-        // Public static method to get the instance
+        // Étape 3: Fournir une méthode publique statique pour accéder à l'instance unique.
         public static StockManager Instance
         {
             get
             {
-                lock (lockObject)
+                if (_instance == null)
                 {
-                    if (instance == null)
-                    {
-                        instance = new StockManager();
-                    }
-                    return instance;
+                    _instance = new StockManager();
                 }
+                return _instance;
             }
         }
+
+        private Dictionary<string, int> stock = new Dictionary<string, int>();
 
         public void AddToStock(string piece, int quantity)
         {
