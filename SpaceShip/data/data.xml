@@ -1,0 +1,10 @@
+<Orders>
+  <Order>
+    <Type>Speeder</Type>
+    <Quantity>2</Quantity>
+  </Order>
+  <Order>
+    <Type>Cargo</Type>
+    <Quantity>1</Quantity>
+  </Order>
+</Orders>
